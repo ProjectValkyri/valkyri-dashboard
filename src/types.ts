@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 
 export type FeedFilter = "all" | "news" | "telegram" | "osint" | "analyst" | "twitter";
+export type IntelSource = "news" | "telegram" | "osint" | "twitter";
 export type Priority = "high" | "medium" | "low";
 
 export interface IntelItem {
@@ -10,7 +11,7 @@ export interface IntelItem {
   description: string;
   priorities: [Priority, Priority];
   tags: { label: string; type: "analyst" | "location" }[];
-  source: string;
+  source: IntelSource;
   time: string;
 }
 

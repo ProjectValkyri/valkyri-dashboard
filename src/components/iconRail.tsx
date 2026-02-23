@@ -13,22 +13,25 @@ function RailButton({
   onClick: () => void;
 }) {
   const Icon = item.icon;
+
   return (
     <button
       onClick={onClick}
       title={item.label}
       className={`
         w-10 h-10 flex items-center justify-center
-        rounded-lg border-none cursor-pointer
+        rounded-lg cursor-pointer
         transition-all duration-150 relative
-        ${active
-          ? "text-text-primary bg-white/[0.06]"
-          : "text-text-muted bg-transparent hover:text-text-secondary hover:bg-white/[0.04]"
+        border border-transparent
+        ${
+          active
+            ? "bg-card text-foreground border-border"
+            : "bg-transparent text-muted-foreground hover:bg-card hover:text-foreground"
         }
       `}
     >
       {item.badge && (
-        <span className="absolute top-1.5 right-1.5 w-[7px] h-[7px] bg-accent-red rounded-full border-2 border-bg-secondary" />
+        <span className="absolute top-1.5 right-1.5 w-[7px] h-[7px] bg-foreground rounded-full border-2 border-background" />
       )}
       <Icon size={20} />
     </button>
@@ -43,7 +46,7 @@ export default function IconRail({
   onSelect: (id: string) => void;
 }) {
   return (
-    <nav className="w-14 min-w-[56px] flex flex-col items-center py-3 gap-0.5 bg-bg-secondary border-r border-border">
+    <nav className="w-14 min-w-[56px] flex flex-col items-center py-3 gap-1 bg-background border-r border-border">
       {RAIL_ITEMS.map((item) => (
         <RailButton
           key={item.id}
@@ -54,7 +57,7 @@ export default function IconRail({
       ))}
 
       <div className="flex-1" />
-      <div className="w-6 h-px my-1.5 bg-border-subtle" />
+      <div className="w-6 h-px my-2 bg-border" />
 
       {RAIL_BOTTOM.map((item) => (
         <RailButton

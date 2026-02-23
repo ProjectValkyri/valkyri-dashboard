@@ -34,7 +34,7 @@ export const INTEL_DATA: IntelItem[] = [
     description: "New intelligence data received from multiple verified sources indicating ongoing developments.",
     priorities: ["high", "high"],
     tags: [{ label: "Analyst", type: "analyst" }],
-    source: "Reuters",
+    source: "telegram",
     time: "Just now",
   },
   {
