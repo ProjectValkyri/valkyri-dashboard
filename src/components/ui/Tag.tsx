@@ -5,10 +5,9 @@ import type { LucideIcon } from "lucide-react";
 export type TagVariant = "analyst" | "location" | "status";
 
 const variantClasses: Record<TagVariant, string> = {
-  analyst: "bg-white/[0.06] text-text-secondary border-0",
-  location:
-    "bg-transparent border border-border text-text-muted",
-  status: "bg-white/[0.06] text-text-secondary border-0",
+  analyst: "bg-card text-muted-foreground border-0",
+  location: "bg-transparent border border-border text-muted-foreground",
+  status: "bg-card text-muted-foreground border-0",
 };
 
 export interface TagProps {

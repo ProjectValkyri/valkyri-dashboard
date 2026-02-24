@@ -2,7 +2,7 @@
 
 import type { RailItem } from "@/types";
 import { RAIL_ITEMS, RAIL_BOTTOM } from "@/lib/data";
-import { IconButton } from "@/components/ui";
+import IconButton from "@/components/ui/IconButton";
 
 export interface IconRailProps {
   activeId: string;
@@ -18,7 +18,7 @@ export default function IconRail({
   bottomItems = RAIL_BOTTOM,
 }: IconRailProps) {
   return (
-    <nav className="w-14 min-w-[56px] flex flex-col items-center py-3 gap-0.5 bg-bg-secondary border-r border-border">
+    <nav className="w-14 min-w-[56px] flex flex-col items-center py-3 gap-1 bg-background border-r border-border">
       {railItems.map((item) => (
         <IconButton
           key={item.id}
@@ -33,7 +33,7 @@ export default function IconRail({
       ))}
 
       <div className="flex-1" />
-      <div className="w-6 h-px my-1.5 bg-border-subtle" />
+      <div className="w-6 h-px my-2 bg-border" />
 
       {bottomItems.map((item) => (
         <IconButton

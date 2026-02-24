@@ -101,7 +101,7 @@ export const INTEL_DATA: IntelItem[] = [
     description: "New intelligence data received from multiple verified sources indicating ongoing developments.",
     priorities: ["high", "high"],
     tags: [{ label: "Analyst", type: "analyst" }],
-    source: "Reuters",
+    source: "telegram",
     time: "Just now",
   },
   {
@@ -114,7 +114,7 @@ export const INTEL_DATA: IntelItem[] = [
       { label: "Analyst", type: "analyst" },
       { label: "Baltic Sea", type: "location" },
     ],
-    source: "AP News",
+    source: "news",
     time: "Just now",
   },
   {
@@ -127,7 +127,7 @@ export const INTEL_DATA: IntelItem[] = [
       { label: "OSINT", type: "analyst" },
       { label: "Donbas", type: "location" },
     ],
-    source: "Telegram / OSINT",
+    source: "osint",
     time: "2 min ago",
   },
   {
@@ -137,7 +137,7 @@ export const INTEL_DATA: IntelItem[] = [
     description: "New overhead imagery reveals significant asset repositioning along the northern corridor.",
     priorities: ["high", "high"],
     tags: [{ label: "Analyst", type: "analyst" }],
-    source: "Maxar / Analyst",
+    source: "twitter",
     time: "5 min ago",
   },
 ];

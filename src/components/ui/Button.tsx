@@ -8,9 +8,9 @@ export type ButtonSize = "sm" | "md";
 
 const variantClasses: Record<ButtonVariant, string> = {
   ghost:
-    "bg-transparent text-text-secondary hover:text-text-primary hover:bg-white/[0.04] border-none",
+    "bg-transparent text-muted-foreground hover:text-foreground hover:bg-card border-none",
   primary:
-    "bg-text-primary text-bg-primary border border-text-primary hover:opacity-90",
+    "bg-foreground text-background border border-foreground font-medium hover:opacity-90",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

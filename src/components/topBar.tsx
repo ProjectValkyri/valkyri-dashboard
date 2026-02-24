@@ -24,24 +24,25 @@ export default function Topbar({
   return (
     <header
       className="
-        fixed top-0 left-0 right-0 h-[52px] z-50
+        fixed top-0 left-0 right-0 h-13 z-50
         flex items-center justify-between px-4
-        bg-bg-secondary border-b border-border
+        bg-background border-b border-border
+        backdrop-blur supports-[backdrop-filter]:bg-background/80
       "
     >
       <div className="flex items-center gap-3">
-        <div className="flex flex-col leading-none">
-          <span className="font-mono font-bold text-sm tracking-[3px] text-text-primary">
+        <div className="flex flex-col leading-none px-3">
+          <span className="font-mono font-bold text-sm tracking-[3px] text-foreground">
             {title}
           </span>
-          <span className="font-mono font-light text-[9.5px] tracking-[1.5px] uppercase text-text-muted">
+          <span className="font-mono font-light text-[9.5px] tracking-[1.5px] uppercase text-muted-foreground">
             {subtitle}
           </span>
         </div>
         <div className="w-px h-7 mx-2 bg-border" />
       </div>
 
-      <div className="flex items-center gap-0.5">
+      <div className="flex items-center gap-1">
         {navItems.map((item) => (
           <Button
             key={item.id}

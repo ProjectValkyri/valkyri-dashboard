@@ -40,16 +40,16 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
           transition-all duration-150 relative shrink-0
           ${sizeClasses[size]}
           ${active
-            ? "text-text-primary bg-white/[0.06]"
-            : "text-text-muted bg-transparent hover:text-text-secondary hover:bg-white/[0.04]"}
-          ${size === "sm" ? "rounded border border-border hover:border-text-muted" : "border-none"}
+            ? "text-foreground bg-card border-border"
+            : "text-muted-foreground bg-transparent hover:text-foreground hover:bg-card"}
+          ${size === "sm" ? "rounded border border-border hover:border-foreground" : "border-none"}
           ${className}
         `.trim()}
         {...rest}
       >
         {badge && (
           <span
-            className="absolute top-1.5 right-1.5 w-[7px] h-[7px] bg-accent-red rounded-full border-2 border-bg-secondary"
+            className="absolute top-1.5 right-1.5 w-[7px] h-[7px] bg-foreground rounded-full border-2 border-background"
             aria-hidden
           />
         )}

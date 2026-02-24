@@ -40,8 +40,8 @@ export default function SegmentedControl({
               px-2.5 py-1 rounded cursor-pointer
               transition-all duration-150 border
               ${active
-                ? "bg-text-primary text-bg-primary border-text-primary font-medium"
-                : "bg-transparent text-text-secondary border-border hover:border-text-muted hover:text-text-primary"}
+                ? "bg-foreground text-background border-foreground font-medium"
+                : "bg-transparent text-muted-foreground border-border hover:text-foreground hover:border-foreground"}
               ${optionClassName}
             `.trim()}
           >
