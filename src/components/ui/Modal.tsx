@@ -14,6 +14,8 @@ export interface ModalProps {
   width?: string | number;
   /** Position: 'center' or 'right' (default right for panel-style modals) */
   position?: "center" | "right";
+  /** If true, panel appears as a floating card (fade in, no slide) with margin and rounded corners */
+  floating?: boolean;
 }
 
 export default function Modal({
@@ -24,6 +26,7 @@ export default function Modal({
   className = "",
   width = 360,
   position = "right",
+  floating = false,
 }: ModalProps) {
   useEffect(() => {
     if (!open) return;
@@ -45,7 +48,7 @@ export default function Modal({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-stretch justify-end"
+      className={`fixed inset-0 z-[100] flex ${floating ? "items-start justify-end pt-16 pr-4 pb-4" : "items-stretch justify-end"}`}
       aria-modal="true"
       role="dialog"
       aria-labelledby={title ? "modal-title" : undefined}
@@ -62,10 +65,10 @@ export default function Modal({
       <div
         className={`
           relative z-10 flex flex-col
-          bg-bg-secondary border-l border-border-subtle
+          bg-bg-secondary border border-border-subtle
           shadow-2xl
-          animate-modal-slide-in
-          ${position === "center" ? "m-auto rounded-lg border border-border" : "h-full"}
+          ${floating ? "animate-modal-fade-in rounded-lg max-h-[calc(100vh-5rem)]" : "animate-modal-slide-in border-l h-full"}
+          ${position === "center" ? "m-auto rounded-lg border border-border" : ""}
           ${className}
         `.trim()}
         style={{

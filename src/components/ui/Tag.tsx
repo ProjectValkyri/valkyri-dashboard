@@ -5,7 +5,7 @@ import type { LucideIcon } from "lucide-react";
 export type TagVariant = "analyst" | "location" | "status";
 
 const variantClasses: Record<TagVariant, string> = {
-  analyst: "bg-card text-muted-foreground border-0",
+  analyst: "bg-violet-500/15 text-violet-300 border border-violet-500/40",
   location: "bg-transparent border border-border text-muted-foreground",
   status: "bg-card text-muted-foreground border-0",
 };

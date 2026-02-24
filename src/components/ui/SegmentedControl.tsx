@@ -11,6 +11,8 @@ export interface SegmentedControlProps {
   onChange: (id: string) => void;
   className?: string;
   optionClassName?: string;
+  /** Optional per-option extra class (e.g. for source color tint when inactive) */
+  getOptionClassName?: (optionId: string) => string;
 }
 
 export default function SegmentedControl({
@@ -19,6 +21,7 @@ export default function SegmentedControl({
   onChange,
   className = "",
   optionClassName = "",
+  getOptionClassName,
 }: SegmentedControlProps) {
   return (
     <div
@@ -28,6 +31,7 @@ export default function SegmentedControl({
     >
       {options.map((opt) => {
         const active = value === opt.id;
+        const optionTint = getOptionClassName?.(opt.id) ?? "";
         return (
           <button
             key={opt.id}
@@ -43,6 +47,7 @@ export default function SegmentedControl({
                 ? "bg-foreground text-background border-foreground font-medium"
                 : "bg-transparent text-muted-foreground border-border hover:text-foreground hover:border-foreground"}
               ${optionClassName}
+              ${optionTint}
             `.trim()}
           >
             {opt.label}

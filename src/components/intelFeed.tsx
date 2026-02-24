@@ -1,6 +1,6 @@
 "use client";
 
-import type { FeedFilter, IntelItem, Priority } from "@/types";
+import type { FeedFilter, IntelItem, IntelSource, Priority } from "@/types";
 import {
   FILTERS,
   INTEL_DATA,
@@ -16,6 +16,29 @@ const PRIORITY_CLASS: Record<Priority, string> = {
   high: "bg-foreground",
   medium: "bg-muted-foreground",
   low: "bg-border",
+};
+
+const SOURCE_PILL_CLASS: Record<IntelSource, string> = {
+  telegram: "bg-indigo-500/20 text-indigo-300 border border-indigo-500/40",
+  news: "bg-amber-500/20 text-amber-300 border border-amber-500/40",
+  osint: "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40",
+  twitter: "bg-sky-500/20 text-sky-300 border border-sky-500/40",
+};
+
+const SOURCE_LABEL: Record<IntelSource, string> = {
+  telegram: "Telegram",
+  news: "News",
+  osint: "OSINT",
+  twitter: "Twitter",
+};
+
+/** Filter pill tint when inactive (by filter id) for source distinction */
+const FILTER_TINT: Record<string, string> = {
+  news: "border-amber-500/40 hover:border-amber-400/60",
+  telegram: "border-indigo-500/40 hover:border-indigo-400/60",
+  osint: "border-emerald-500/40 hover:border-emerald-400/60",
+  analyst: "border-violet-500/40 hover:border-violet-400/60",
+  twitter: "border-sky-500/40 hover:border-sky-400/60",
 };
 
 function priorityToLabel(filter: FeedFilter): string {
@@ -82,7 +105,16 @@ export function IntelCard({ item, index, onAction }: IntelCardProps) {
         </p>
 
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <span
+              className={`
+                font-mono text-[10px] tracking-[0.3px] font-medium
+                px-2 py-0.5 rounded border shrink-0
+                ${SOURCE_PILL_CLASS[item.source]}
+              `}
+            >
+              {SOURCE_LABEL[item.source]}
+            </span>
             {item.tags.map((tag) => (
               <Tag
                 key={tag.label}
@@ -103,10 +135,6 @@ export function IntelCard({ item, index, onAction }: IntelCardProps) {
           />
         </div>
       </div>
-
-      <p className="font-mono text-[10px] tracking-[0.5px] text-muted-foreground opacity-50 px-3.5 pb-0.5 pt-1">
-        {item.source}
-      </p>
     </div>
   );
 }
@@ -153,6 +181,7 @@ export default function IntelFeed({
           options={options}
           value={activeFilter}
           onChange={(id) => onFilterChange(id as FeedFilter)}
+          getOptionClassName={(id) => FILTER_TINT[id] ?? ""}
         />
       </div>
 
