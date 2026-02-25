@@ -53,9 +53,10 @@ export default function FrontlinePanel({
           <div
             key={item.id}
             className="
-              bg-bg-card border border-border-subtle rounded-lg p-3 mb-2
-              hover:bg-bg-card-hover hover:border-border
+              bg-bg-card border border-border-subtle rounded-lg p-3 mb-3
+              hover:hover:border-foreground/40
               transition-all duration-200
+              animate-fade-in-up
             "
           >
             <div className="flex items-start gap-2">

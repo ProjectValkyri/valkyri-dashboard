@@ -11,9 +11,9 @@ import Topbar from "@/components/topBar";
 import type { TopbarModalId } from "@/components/topBar";
 import IconRail from "@/components/iconRail";
 import IntelFeed from "@/components/intelFeed";
-import FrontlinePanel from "@/components/FrontlinePanel";
+import FrontlinePanel from "@/components/frontlinePanel";
 import MapViewport from "@/components/mapViewport";
-import LayerControls from "@/components/LayerControls";
+import LayerControls from "@/components/layerControls";
 import { IconButton } from "@/components/ui";
 import { X } from "lucide-react";
 
