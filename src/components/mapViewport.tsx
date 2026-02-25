@@ -1,4 +1,14 @@
-export default function MapViewport() {
+import type { MapMode } from "@/types";
+
+export interface MapViewportProps {
+  mapMode?: MapMode;
+  layerOpacity?: number;
+}
+
+export default function MapViewport({
+  mapMode = "wire",
+  layerOpacity = 100,
+}: MapViewportProps) {
   return (
     <main className="flex-1 relative overflow-hidden bg-bg-primary">
       <div
