@@ -12,7 +12,8 @@ import type { TopbarModalId } from "@/components/topBar";
 import IconRail from "@/components/iconRail";
 import IntelFeed from "@/components/intelFeed";
 import FrontlinePanel from "@/components/frontlinePanel";
-import MapViewport from "@/components/mapViewport";
+// import MapViewport from "@/components/mapViewport";
+import GlobeWrapper from "@/components/globusWrapper";
 import LayerControls from "@/components/layerControls";
 import { IconButton } from "@/components/ui";
 import { X } from "lucide-react";
@@ -41,7 +42,7 @@ function MapPanel({
         ${className}
       `.trim()}
     >
-      <div className="flex items-center justify-end px-2 pt-2 pb-0 shrink-0">
+      <div className="flex items-center justify-end px-2 pt-2 pb-0 shrink-0 bg-background">
         <IconButton
           icon={X}
           size="sm"
@@ -102,7 +103,7 @@ export default function Dashboard() {
           items={intelItems}
         />
         <div className="flex-1 relative overflow-hidden">
-          <MapViewport mapMode={mapMode} layerOpacity={layerOpacity} />
+          <GlobeWrapper />
 
           {openPanel === "frontlines" && (
             <MapPanel onClose={() => setOpenPanel(null)} className="w-[340px]">

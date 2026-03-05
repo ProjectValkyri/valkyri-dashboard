@@ -36,7 +36,7 @@ export default function LayerControls({
   mapModeOptions = defaultMapModeOptions,
 }: LayerControlsProps) {
   return (
-    <div className="flex flex-col overflow-hidden h-full min-h-0">
+    <div className="flex flex-col overflow-hidden h-full min-h-0 bg-background">
       <div className="px-4 pt-3.5 pb-3 border-b border-border-subtle shrink-0">
         <span className="font-mono text-xs tracking-[1.5px] font-semibold uppercase text-text-primary">
           {sectionTitle}
@@ -89,7 +89,7 @@ export default function LayerControls({
             max={100}
             value={layerOpacity}
             onChange={(e) => onLayerOpacityChange(Number(e.target.value))}
-            className="w-full h-1.5 rounded-full appearance-none bg-bg-card accent-accent-green cursor-pointer"
+            className="w-full h-1.5 rounded-full appearance-none bg-bg-card cursor-pointer bg-foreground"
           />
         </div>
       </div>

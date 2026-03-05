@@ -159,3 +159,61 @@
   background: var(--border);
   border-radius: 3px;
 }
+
+/* OpenGlobus */
+/* Hide controls we don't need */
+.og-layerSwitcher_button,
+.og-ddialog {
+  display: none !important;
+}
+
+/* Attribution - small, bottom-right */
+.og-attribution {
+  position: fixed !important;
+  right: 12px !important;
+  bottom: 12px !important;
+  left: auto !important;
+  font-size: 9px !important;
+  font-family: var(--font-mono) !important;
+  color: var(--text-muted) !important;
+  opacity: 0.5;
+}
+
+/* Coordinates - small, bottom-right above attribution */
+.og-coordinates {
+  position: fixed !important;
+  right: 12px !important;
+  bottom: 28px !important;
+  left: auto !important;
+  font-size: 10px !important;
+  font-family: var(--font-mono) !important;
+  color: var(--text-secondary) !important;
+  opacity: 0.7;
+}
+
+/* Zoom buttons - right side, vertically stacked */
+.og-zoomin-button,
+.og-zoomout-button {
+  position: fixed !important;
+  right: 12px !important;
+  width: 28px !important;
+  height: 28px !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  opacity: 0.8;
+}
+
+.og-zoomin-button {
+  top: 80px !important;
+}
+
+.og-zoomout-button {
+  top: 114px !important;
+}
+
+/* Actually controls the map */
+.og-inner {
+  width: 100%;
+  height: 100%;
+}

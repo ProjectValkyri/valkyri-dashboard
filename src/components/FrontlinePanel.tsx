@@ -27,7 +27,7 @@ export default function FrontlinePanel({
   const visibleCount = items.filter((i) => i.visible).length;
 
   return (
-    <div className="flex flex-col overflow-hidden h-full min-h-0">
+    <div className="flex flex-col overflow-hidden h-full min-h-0 bg-background">
       <div className="px-4 pt-3.5 pb-2.5 border-b border-border-subtle shrink-0">
         <div className="flex items-center justify-between gap-2 mb-2">
           <div className="flex items-center gap-2">

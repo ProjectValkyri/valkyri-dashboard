@@ -164,7 +164,7 @@ export default function IntelFeed({
   const itemCount = items.length;
 
   return (
-    <aside className="w-[370px] min-w-[370px] flex flex-col overflow-hidden bg-background border-r border-border">
+    <aside className="w-[370px] min-w-[370px] flex flex-col overflow-hidden bg-primary border-r border-border">
       <div className="px-4 pt-3.5 pb-2.5 border-b border-border">
         <div className="flex items-center justify-between mb-2.5">
           <div className="flex items-center gap-2">
