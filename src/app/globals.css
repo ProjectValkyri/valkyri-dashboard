@@ -159,8 +159,8 @@
   background: var(--border);
   border-radius: 3px;
 }
-/* OpenGlobus */
 
+/* OpenGlobus */
 /* Hide controls we don't need */
 .og-layerSwitcher_button,
 .og-ddialog {

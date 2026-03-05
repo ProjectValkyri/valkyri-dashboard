@@ -42,7 +42,7 @@ function MapPanel({
         ${className}
       `.trim()}
     >
-      <div className="flex items-center justify-end px-2 pt-2 pb-0 shrink-0">
+      <div className="flex items-center justify-end px-2 pt-2 pb-0 shrink-0 bg-background">
         <IconButton
           icon={X}
           size="sm"
